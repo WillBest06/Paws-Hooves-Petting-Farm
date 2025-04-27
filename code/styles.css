@@ -4,9 +4,9 @@
     padding: 0%;
     --sageGreen: #90C08D;
     --cornflowerBlue: #9EC9E7;
+    --burntOrange: #E9724C;
 
 }
-
 
 .site-container {
     width: 100%;
@@ -34,14 +34,34 @@
     justify-content: left;
     align-items: center;
     padding: 1rem;
+    gap: 2rem;
 }
 
-.head h1 {
+.head-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.head-link:hover {
+    outline: solid 2px black;
+    
+}
+
+.head-link:hover::after {
+    content: "\1F517\FE0E"; /* HyperLink symbol */
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.white-header {
     color: white;
 }
 
 .navi {
     grid-area: navi;
+    z-index: 1;
 }
 
 .navbar {
@@ -68,13 +88,16 @@
     height: 100%;
     text-align: center;
     padding: 1rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .navbar a:hover {
-    outline: 1px solid black;
+    outline: 2px solid black;
 }
 
 .main {
     grid-area: main;
     background-color: var(--cornflowerBlue);
 }
+
+/* reviews */
