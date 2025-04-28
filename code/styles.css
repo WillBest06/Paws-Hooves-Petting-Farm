@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0%;
     padding: 0%;
+    font-family: "Roboto", sans-serif;
+
     --sageGreen: #90C08D;
     --cornflowerBlue: #9EC9E7;
     --burntOrange: #E9724C;
@@ -90,7 +92,6 @@
     height: 100%;
     text-align: center;
     padding: 1rem;
-    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .navbar a:hover {
@@ -108,7 +109,7 @@
 /* reviews */
 
 .review-grid {
-    width: 80%;
+    width: clamp(300px, 90%, 1300px);
     padding: 1rem;
     display: grid;
     gap: 2rem;
