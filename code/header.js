@@ -125,6 +125,23 @@ function createNavbar () {
     };
     navbar.appendChild(navlist);
 };
+function createReview() {
+    const reviewGrid = document.querySelector('.review-grid');
+
+    for (let i = 0; i < 12; i++) {
+        const reviewCard = document.createElement('article');
+        reviewCard.classList.toggle('review');
+        const header = document.createElement('h3');
+        header.textContent = 'Love the farm';
+        const text = document.createElement('p');
+        text.textContent = 'The absolute best part of the farm was the sheer number of animals on offer';
+        reviewCard.appendChild(header);
+        reviewCard.appendChild(text);
+        reviewGrid.appendChild(reviewCard);
+    }
+}
 
 createHeader();
 createNavbar();
+createReview();
+
