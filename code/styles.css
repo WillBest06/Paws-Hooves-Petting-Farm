@@ -68,7 +68,7 @@
     background-color: white;
 }
 
-.navbar {
+.nav-list {
     display: flex;
     justify-content: space-around;
     list-style: none;
@@ -77,7 +77,7 @@
     margin: 0%;
 }
 
-.navbar li {
+.nav-list li {
     display: flex;
     flex: 1;
     height: 100%;
@@ -85,7 +85,7 @@
     align-items: center;
 }
 
-.navbar a {
+.nav-list a {
     color: black;
     text-decoration: none;
     width: 100%;
@@ -94,7 +94,7 @@
     padding: 1rem;
 }
 
-.navbar a:hover {
+.nav-list a:hover {
     outline: 2px solid black;
 }
 

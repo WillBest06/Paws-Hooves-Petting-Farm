@@ -1,6 +1,7 @@
-const header = document.querySelector('.head');
+function createHeader () {
+    const header = document.querySelector('.head');
 
-header.innerHTML = `<a href="homepage.html" class="head-link">
+    header.innerHTML = `<a href="homepage.html" class="head-link">
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100" viewBox="0 0 1024 1024">
                     <path
                         d="M0 0 C2.87562037 2.39010616 5.71764238 4.81538768 8.53955078 7.26855469 C11.16026208 9.58695546 11.16026208 9.58695546 14.18408203 11.51855469 C13.68277929 19.21095876 12.57619344 26.75889478 11.28833008 34.35180664 C3.86433772 79.08853067 9.43445657 135.06709882 35.55908203 173.45605469 C47.05298102 189.22080313 60.56668244 197.5539148 79.18408203 202.51855469 C71.53949222 214.82366196 58.36184045 222.80076061 44.43310547 226.11938477 C17.20426266 230.95212011 -8.65659287 218.21352944 -33.15893555 208.09375 C-67.60717322 193.96707775 -94.88589164 199.79066623 -127.97506714 213.49234009 C-135.01011297 216.40271289 -142.06409267 219.19321299 -149.25341797 221.70605469 C-150.00800293 221.97272949 -150.76258789 222.2394043 -151.54003906 222.51416016 C-169.01808987 228.49652688 -188.58624545 229.24493724 -205.53466797 221.23339844 C-221.73970449 212.25560814 -233.58633403 197.25441893 -238.69091797 179.58105469 C-239.44511333 176.9011332 -240.14105204 174.22080712 -240.81591797 171.51855469 C-241.01958984 170.7103125 -241.22326172 169.90207031 -241.43310547 169.06933594 C-248.06937734 124.85009583 -216.84598776 82.76387892 -192.25048828 49.21875 C-189.818334 45.94890657 -187.33436998 42.72229977 -184.81591797 39.51855469 C-184.38085938 38.96490234 -183.94580078 38.41125 -183.49755859 37.84082031 C-158.9369156 7.03783537 -127.01450085 -22.88896555 -86.47216797 -28.01269531 C-54.13951037 -31.52249038 -24.86851037 -20.2879969 0 0 Z "
@@ -72,8 +73,58 @@ header.innerHTML = `<a href="homepage.html" class="head-link">
                 <h1 class="white-header">Paws & Hooves Petting Farm</h1>
             </a>`;
 
-const breadcrumb = document.createElement('h2');
-const page = document.title;
-breadcrumb.textContent = `> ${page}`;
-breadcrumb.classList.toggle('white-header');   
-header.appendChild(breadcrumb);
+    const breadcrumb = document.createElement('h2');
+    const page = document.title;
+    breadcrumb.textContent = `> ${page}`;
+    breadcrumb.classList.toggle('white-header');
+    header.appendChild(breadcrumb);
+};
+
+function createNavbar () {
+    const navbar = document.querySelector('.navi');
+    const navlist = document.createElement('ul');
+    navlist.classList.toggle('nav-list');
+
+    const pages = [
+        {
+            'name': 'Animals',
+            'hyperlink': 'animals.html'
+        },
+        {
+            'name': 'Facilities',
+            'hyperlink': 'facilities.html'
+        },
+        {
+            'name': 'Adoption',
+            'hyperlink': 'adoption.html'
+        },
+        {
+            'name': 'Blog',
+            'hyperlink': 'blog.html'
+        },
+        {
+            'name': 'Information',
+            'hyperlink': 'info.html'
+        },
+        {
+            'name': 'Reviews',
+            'hyperlink': 'reviews.html'
+        },
+        {
+            'name': 'Support us',
+            'hyperlink': 'support.html'
+        }];
+
+    for (let page of pages) {
+        const listEl = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = page['hyperlink'];
+        link.textContent = page['name'];
+        listEl.appendChild(link);
+        navlist.appendChild(listEl);
+    };
+    navbar.appendChild(navlist);
+};
+
+createHeader();
+createNavbar();
