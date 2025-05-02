@@ -92,7 +92,10 @@ function createNavbar () {
         },
         {
             'name': 'Facilities',
-            'hyperlink': 'facilities.html'
+            'submenu': [{ 'name': 'Petting Zoo', 'hyperlink': 'petting-zoo.html' },
+                        { 'name': 'Cafe', 'hyperlink': 'cafe.html' },
+                        { 'name': 'Gift Shop', 'hyperlink': 'shop.html' },
+                        { 'name': 'Interactive Map', 'hyperlink': 'map.html' }]
         },
         {
             'name': 'Adoption',
@@ -100,11 +103,16 @@ function createNavbar () {
         },
         {
             'name': 'Blog',
-            'hyperlink': 'blog.html'
+            'submenu': [{'name': 'Blog', 'hyperlink': 'blog-reader-view.html'},
+                        {'name': 'Write Blog', 'hyperlink': 'blog-writer-view.html'}]
         },
         {
             'name': 'Information',
-            'hyperlink': 'info.html'
+            'submenu': [{ 'name': 'Contact and Locate us', 'hyperlink': 'contact-locate.html' },
+                        { 'name': 'FAQs', 'hyperlink': 'faqs.html' },
+                        { 'name': 'Volunteer with us', 'hyperlink': 'volunteer.html' },
+                        { 'name': 'Accessibility', 'hyperlink': 'accessibility.html' },
+                        { 'name': 'Our Green Commitments', 'hyperlink': 'green-commitments.html' },]
         },
         {
             'name': 'Reviews',
@@ -112,18 +120,46 @@ function createNavbar () {
         },
         {
             'name': 'Support us',
-            'hyperlink': 'support.html'
+            'submenu': [{ 'name': 'Donate', 'hyperlink': 'donate.html' },
+                        { 'name': 'Membership', 'hyperlink': 'membership.html' }]
         }];
 
     for (let page of pages) {
-        const listEl = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = page['hyperlink'];
-        link.textContent = page['name'];
-        listEl.appendChild(link);
-        navlist.appendChild(listEl);
+        if (!('submenu' in page)) {
+            createNavbarLink(page, navlist);
+        } else if ('submenu' in page) {
+            createNavbarDropDown(page, navlist);
+        }
     };
     navbar.appendChild(navlist);
+};
+
+function createNavbarLink (pageInfo, navlist) {
+    const listEl = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = pageInfo['hyperlink'];
+    link.textContent = pageInfo['name'];
+    listEl.appendChild(link);
+    navlist.appendChild(listEl);
+};
+
+function createNavbarDropDown(pageInfo, navlist) {
+    const dropdownListItem = document.createElement('li');
+    dropdownListItem.textContent = pageInfo['name']
+    dropdownListItem.classList.toggle('dropdown');
+
+    const submenu = document.createElement('div');
+    submenu.classList.toggle('content');
+
+    for (let subpage of pageInfo['submenu']) {
+        const pageLink = document.createElement('a');
+        pageLink.href = subpage['hyperlink'];
+        pageLink.textContent = subpage['name'];
+        submenu.appendChild(pageLink);
+        dropdownListItem.appendChild(submenu)
+    };
+
+    navlist.appendChild(dropdownListItem);
 };
 function createReview() {
     const reviewGrid = document.querySelector('.review-grid');

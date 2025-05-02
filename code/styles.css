@@ -28,6 +28,7 @@
     /* border: 1px solid black; */
 }
 
+/* header */
 
 .head {
     grid-area: head;
@@ -60,6 +61,8 @@
     color: white;
 }
 
+/* navbar */
+
 .navi {
     grid-area: navi;
     z-index: 1;
@@ -86,17 +89,50 @@
 }
 
 .nav-list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: black;
     text-decoration: none;
     width: 100%;
     height: 100%;
-    text-align: center;
     padding: 1rem;
 }
 
-.nav-list a:hover {
+.nav-list li:hover, .dropdown a:hover{
+    cursor: pointer;
     outline: 2px solid black;
 }
+
+/* navbar dropdown menus */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown::after {
+    padding-left: .5rem;
+    font-weight: bold;
+    content: '⌄';
+}
+
+.dropdown a{
+    display: block;
+}
+
+.dropdown .content {
+    min-width: 100%;
+    top: 100%;
+    position: absolute;
+    background-color: rgb(228, 228, 228);
+    display: none;
+}
+
+.dropdown:hover .content {
+    display: block;
+}
+
+/* main content */
 
 .main {
     grid-area: main;
