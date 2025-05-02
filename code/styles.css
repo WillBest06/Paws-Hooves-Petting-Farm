@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0%;
     padding: 0%;
+    font-family: "Roboto", sans-serif;
+
     --sageGreen: #90C08D;
     --cornflowerBlue: #9EC9E7;
     --burntOrange: #E9724C;
@@ -69,7 +71,7 @@
     background-color: white;
 }
 
-.navbar {
+.nav-list {
     display: flex;
     justify-content: space-around;
     list-style: none;
@@ -78,7 +80,7 @@
     margin: 0%;
 }
 
-.navbar li {
+.nav-list li {
     display: flex;
     flex: 1;
     height: 100%;
@@ -95,7 +97,6 @@
     width: 100%;
     height: 100%;
     padding: 1rem;
-    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .nav-list li:hover, .dropdown a:hover{
@@ -144,7 +145,7 @@
 /* reviews */
 
 .review-grid {
-    width: 80%;
+    width: clamp(300px, 90%, 1300px);
     padding: 1rem;
     display: grid;
     gap: 2rem;
