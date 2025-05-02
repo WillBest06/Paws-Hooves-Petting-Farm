@@ -72,8 +72,183 @@ header.innerHTML = `<a href="homepage.html" class="head-link">
                 <h1 class="white-header">Paws & Hooves Petting Farm</h1>
             </a>`;
 
-const breadcrumb = document.createElement('h2');
-const page = document.title;
-breadcrumb.textContent = `> ${page}`;
-breadcrumb.classList.toggle('white-header');   
-header.appendChild(breadcrumb);
+    const breadcrumb = document.createElement('h2');
+    const page = document.title;
+    breadcrumb.textContent = `> ${page}`;
+    breadcrumb.classList.toggle('white-header');
+    header.appendChild(breadcrumb);
+};
+
+function createNavbar () {
+    const navbar = document.querySelector('.navi');
+    const navlist = document.createElement('ul');
+    navlist.classList.toggle('nav-list');
+
+    const pages = [
+        {
+            'name': 'Animals',
+            'hyperlink': 'animals.html'
+        },
+        {
+            'name': 'Facilities',
+            'submenu': [{ 'name': 'Petting Zoo', 'hyperlink': 'petting-zoo.html' },
+                        { 'name': 'Cafe', 'hyperlink': 'cafe.html' },
+                        { 'name': 'Gift Shop', 'hyperlink': 'shop.html' },
+                        { 'name': 'Interactive Map', 'hyperlink': 'map.html' }]
+        },
+        {
+            'name': 'Adoption',
+            'hyperlink': 'adoption.html'
+        },
+        {
+            'name': 'Blog',
+            'submenu': [{'name': 'Blog', 'hyperlink': 'blog-reader-view.html'},
+                        {'name': 'Write Blog', 'hyperlink': 'blog-writer-view.html'}]
+        },
+        {
+            'name': 'Information',
+            'submenu': [{ 'name': 'Contact and Locate us', 'hyperlink': 'contact-locate.html' },
+                        { 'name': 'FAQs', 'hyperlink': 'faqs.html' },
+                        { 'name': 'Volunteer with us', 'hyperlink': 'volunteer.html' },
+                        { 'name': 'Accessibility', 'hyperlink': 'accessibility.html' },
+                        { 'name': 'Our Green Commitments', 'hyperlink': 'green-commitments.html' },]
+        },
+        {
+            'name': 'Reviews',
+            'hyperlink': 'reviews.html'
+        },
+        {
+            'name': 'Support us',
+            'submenu': [{ 'name': 'Donate', 'hyperlink': 'donate.html' },
+                        { 'name': 'Membership', 'hyperlink': 'membership.html' }]
+        }];
+
+    for (let page of pages) {
+        if (!('submenu' in page)) {
+            createNavbarLink(page, navlist);
+        } else if ('submenu' in page) {
+            createNavbarDropDown(page, navlist);
+        }
+    };
+    navbar.appendChild(navlist);
+};
+
+function createNavbarLink (pageInfo, navlist) {
+    const listEl = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = pageInfo['hyperlink'];
+    link.textContent = pageInfo['name'];
+    listEl.appendChild(link);
+    navlist.appendChild(listEl);
+};
+
+function createNavbarDropDown(pageInfo, navlist) {
+    const dropdownListItem = document.createElement('li');
+    dropdownListItem.textContent = pageInfo['name']
+    dropdownListItem.classList.toggle('dropdown');
+
+    const submenu = document.createElement('div');
+    submenu.classList.toggle('content');
+
+    for (let subpage of pageInfo['submenu']) {
+        const pageLink = document.createElement('a');
+        pageLink.href = subpage['hyperlink'];
+        pageLink.textContent = subpage['name'];
+        submenu.appendChild(pageLink);
+        dropdownListItem.appendChild(submenu)
+    };
+
+    navlist.appendChild(dropdownListItem);
+};
+function createReview() {
+    const reviewGrid = document.querySelector('.review-grid');
+
+    const reviews = [
+        {
+            title: "Lovely Day Out",
+            para: "The kids had an amazing time feeding the goats. We'll definitely be back!",
+            stars: 5
+        },
+        {
+            title: "So Much Fun",
+            para: "The animals were so friendly, and the staff were super helpful. Great vibes all around.",
+            stars: 5
+        },
+        {
+            title: "Highly Recommend",
+            para: "Clean, well-kept, and packed with charm. A real gem for families.",
+            stars: 5
+        },
+        {
+            title: "Fantastic Experience",
+            para: "Our toddler loved the bunnies! Staff went above and beyond to make it special.",
+            stars: 5
+        },
+        {
+            title: "Great for Kids",
+            para: "Interactive and safe environment. My son hasn’t stopped talking about the piglets.",
+            stars: 4
+        },
+        {
+            title: "Peaceful and Sweet",
+            para: "Perfect way to spend a sunny afternoon. Very relaxing and full of smiles.",
+            stars: 4
+        },
+        {
+            title: "Farm-tastic Visit",
+            para: "Great mix of animals and activities. Loved the tractor ride around the farm.",
+            stars: 5
+        },
+        {
+            title: "Warm Welcome",
+            para: "The staff made us feel like family. The baby lambs were the highlight.",
+            stars: 5
+        },
+        {
+            title: "Memorable Day",
+            para: "Such a wholesome place. Loved how hands-on the experience was.",
+            stars: 4
+        },
+        {
+            title: "Perfect for Families",
+            para: "Educational, entertaining, and adorable. Everything you want in a petting farm.",
+            stars: 5
+        },
+        {
+            title: "Well Organized",
+            para: "No long waits, clean facilities, and lots of happy animals. Great job, team!",
+            stars: 4
+        },
+        {
+            title: "Loved Every Moment",
+            para: "From the pony rides to the feeding stations, it was pure joy.",
+            stars: 5
+        }
+    ];
+
+
+    for (let review of reviews) {
+        const reviewCard = document.createElement('article');
+        reviewCard.classList.toggle('review');
+
+        const header = document.createElement('h3');
+        header.textContent = review['title'];
+
+        const text = document.createElement('p');
+        text.textContent = review['para'];
+
+        const stars = document.createElement('h4');
+        stars.textContent = '★'.repeat(review['stars']);
+        stars.style.color = '#EFBF04';
+        stars.style.fontSize = '2rem';
+        reviewCard.appendChild(header);
+        reviewCard.appendChild(stars);
+        reviewCard.appendChild(text);
+        reviewGrid.appendChild(reviewCard);
+    }
+}
+
+createHeader();
+createNavbar();
+createReview();
+
