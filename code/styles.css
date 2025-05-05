@@ -156,12 +156,6 @@
 .review {
     background-color: white;
     padding: 1rem;
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-}
-=======
->>>>>>> Stashed changes
 }
 
 /* Interactive Map */
@@ -169,23 +163,12 @@
 .map-container {
     width: 100%;
     height: auto;
-<<<<<<< Updated upstream
     display: flex;
-=======
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-
->>>>>>> Stashed changes
     justify-content: center;
     align-items: center;
 }
 
 .map-image {
-<<<<<<< Updated upstream
-=======
-    grid-column: span 3; 
->>>>>>> Stashed changes
     width: 100%;
     height: auto;
     max-width: 100%;
@@ -194,7 +177,3 @@
 }
 
 
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
