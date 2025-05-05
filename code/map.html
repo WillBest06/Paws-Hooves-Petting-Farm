@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Map</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="header.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="site-container">
+            <header class="head">
+                <h2 class="white-header"> > Interactive Map</h2>
+            </header>
+            <nav class="navi">
+
+            </nav>
+            <main>
+                <div class="map-container">
+                <script src ="js/imageMapResizer.min.js" defer></script>
+                <img src="img/farm-map.png" alt="Map" class="map-image" usemap = "#map">
+                <map name="map">
+                    <area shape="rect" coords="325,295,375,345" href="#car-park" alt="Location 1" class="map-area">
+                    <area shape="rect" coords="423,277,473,327" href="#gift-shop" alt="Location 2" class="map-area">
+                    <area shape="rect" coords="549,274,599,324" href="#cafe" alt="Location 3" class="map-area">
+                    <area shape="rect" coords="753,255,803,305" href="#adoption-centre" alt="Location 4" class="map-area">
+                    <area shape="rect" coords="526,567,576,617" href="#pigs" alt="Location 5" class="map-area">
+                    <area shape="rect" coords="794,514,844,564" href="#rabbits" alt="Location 6" class="map-area">
+                    <area shape="rect" coords="587,674,637,724" href="#goats" alt="Location 7" class="map-area">
+                    <area shape="rect" coords="734,620,784,670" href="#donkeys" alt="Location 8" class="map-area">
+                    <area shape="rect" coords="920,587,970,637" href="#ponys" alt="Location 9" class="map-area">
+                    <area shape="rect" coords="775,755,825,805" href="#alpacas" alt="Location 10" class="map-area">
+
+                </map>
+                <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    imageMapResize(); // Call the imageMapResize function after the DOM is fully loaded
+                });</script>
+                </div>
+            </main>
+        
+    </body>
+
+
+</html>
