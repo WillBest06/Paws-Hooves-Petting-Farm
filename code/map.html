@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Map</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="header.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="site-container">
+            <header class="head">
+                <h2 class="white-header"> > Interactive Map</h2>
+            </header>
+            <nav class="navi">
+
+            </nav>
+            <main class="main">
+                <div class="map-container">
+                <script src ="js/imageMapResizer.min.js" defer></script>
+                <img src="img/farm-map.png" alt="Map" class="map-image" usemap = "#map">
+                <map name="map">
+                    <area shape="rect" coords="325,295,375,345" href="#car-park" alt="Car Park" class="map-area">
+                    <area shape="rect" coords="423,277,473,327" href="#gift-shop" alt="Gift Shop" class="map-area">
+                    <area shape="rect" coords="549,274,599,324" href="#cafe" alt="Cafe" class="map-area">
+                    <area shape="rect" coords="753,255,803,305" href="#adoption-centre" alt="Adoption Centre" class="map-area">
+                    <area shape="rect" coords="526,567,576,617" href="#pigs" alt="Pig Pen" class="map-area">
+                    <area shape="rect" coords="794,514,844,564" href="#rabbits" alt="Rabbit Pen" class="map-area">
+                    <area shape="rect" coords="587,674,637,724" href="#goats" alt="Goat Pen" class="map-area">
+                    <area shape="rect" coords="734,620,784,670" href="#donkeys" alt="Donkey Pen" class="map-area">
+                    <area shape="rect" coords="920,587,970,637" href="#ponys" alt="Pony Pen" class="map-area">
+                    <area shape="rect" coords="775,755,825,805" href="#alpacas" alt="Alpaca Pen" class="map-area">
+
+                </map>
+                <div id = "popup" class = "popup"></div>
+                <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    imageMapResize(); // Call the imageMapResize function after the DOM is fully loaded. imported from https://github.com/davidjbradshaw/image-map-resizer
+                });
+                const areas = document.querySelectorAll("area");
+                const popup = document.getElementById("popup");
+                const map = document.querySelector("map");
+                areas.forEach((area) => {
+
+                    area.addEventListener("click", function () {
+                        if (popup.classList.contains("active")) {
+                            popup.classList.remove("active");
+                        }
+                        else{
+                            const coords = area.getAttribute("coords").split(",").map(Number);
+                            const x = (coords[0] + coords[2]) / 2;
+                            const y = (coords[1] + coords[3]) / 2;
+                            console.log(area.alt + " clicked!"); // Debug line
+                            popup.style.top = `${y}px`;
+                            popup.style.left = `${x}px`;
+                            popup.textContent = ""; // Clear previous content
+                            const title = document.createElement("h3");
+                            title.textContent = area.alt;
+                            popup.appendChild(title);
+
+                            const description = document.createElement("p");
+                            if (area.alt === "Car Park") {
+                                description.textContent = "Our car park is located at the entrance of the farm. It is free to use for all visitors.";
+                            } else if (area.alt === "Gift Shop") {
+                                description.textContent = "Our gift shop offers a variety of souvenirs and farm-related products. Open daily from 9 AM to 5 PM.";
+                            } else if (area.alt === "Cafe") {
+                                description.textContent = "Enjoy a selection of hot and cold drinks, snacks, and meals at our cafe. Open daily from 9 AM to 5 PM.";
+                            } else if (area.alt === "Adoption Centre") {
+                                description.textContent = "Visit our adoption centre to learn about our animals available for adoption.";
+                            } else if (area.alt === "Pig Pen") {
+                                description.textContent = "Meet our friendly pigs! They love to be fed and petted.";
+                            } else if (area.alt === "Rabbit Pen") {
+                                description.textContent = "Come and play with our adorable rabbits!";
+                            } else if (area.alt === "Goat Pen") {
+                                description.textContent = "Our goats are very friendly and love to interact with visitors.";
+                            } else if (area.alt === "Donkey Pen") {
+                                description.textContent = "Meet our gentle donkeys!";
+                            } else if (area.alt === "Pony Pen") {
+                                description.textContent = "Our ponies are ready for some petting!";
+                            } else if (area.alt === "Alpaca Pen") {
+                                description.textContent = "Come and see our fluffy alpacas!";
+                            } else {
+                                description.textContent = "Information about this area is not available.";
+                            }
+                            popup.appendChild(description);
+                            popup.classList.add("active");
+                        }})              
+                    });
+                    popup.addEventListener("click", function () {
+                        popup.classList.remove("active");
+                    });
+
+
+                
+                
+                
+                
+                
+                </script>
+                </div>
+            </main>
+        
+    </body>
+
+
+</html>
