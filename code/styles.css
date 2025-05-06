@@ -182,3 +182,31 @@
     width: 100%;
     height: 100%;
 }
+
+/* Meet Our Furry Friends */
+
+.furryfriends-grid {
+    width: minmax((600px + 4rem), 2600px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));
+    gap: 4rem;
+}
+
+.furryfriends-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+    gap: 2rem;
+}
+
+.furryfriends-card > .furryfriends-container {
+    width: 90%;
+}
+
+.furryfriends-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
