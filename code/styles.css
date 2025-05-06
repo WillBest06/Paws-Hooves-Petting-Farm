@@ -157,7 +157,8 @@
 /* accessibility */
 
 .accessibility-grid {
-    width: minmax((300px + 2rem), 1300px);
+    min-width: 250px;
+    max-width: 1400px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
@@ -172,11 +173,42 @@
     gap: 1rem;
 }
 
-.accessibility-card > .image-container {
-    width: 90%;
+.accessibility-card img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
-.image-container img {
+/* Lost and found */
+
+.lost-and-found-grid {
+    min-width: 200px;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.lost-item {
+    display: flex;
+    flex-direction: column  ;
+    background-color: white;
+    padding: 1rem;
+    gap: 10px;
+}
+
+.lost-item button {
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.lost-item img {
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     width: 100%;
     height: 100%;
