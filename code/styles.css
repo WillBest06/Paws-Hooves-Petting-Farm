@@ -136,6 +136,7 @@
     display: flex;
     justify-content: center;
     align-items: start;
+    padding: 2rem;
 }
 
 /* reviews */
