@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lost & Found</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="header.js" defer></script>
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/claimItemModal.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,26 +22,72 @@
 
         </nav>
         <main class="main">
+            <div class="modal-container">
+                <dialog class="claimItemModal">
+                    <section>
+                        <button class="closeBTN">Close</button>
+                        <form action="" method="get">
+                            <div>
+                                <label for="itemClaimed">Item to be claimed:</label>
+                                <input type="text" name="itemClaimed" id="itemClaimed" readonly disabled>
+                            </div>
+
+                            <div>
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname" required>
+                            </div>
+                
+                            <div>
+                                <label for="sname">Surname:</label>
+                                <input type="text" id="sname" name="sname" required>
+                            </div>
+                
+                            <div>
+                                <label for="address1">Address Line 1:</label>
+                                <input type="text" id="address1" name="address1" required>
+                            </div>
+                
+                            <div>
+                                <label for="address2">Address Line 2:</label>
+                                <input type="text" id="address2" name="address2" required>
+                            </div>
+                
+                            <div>
+                                <label for="town-city">Town/City:</label>
+                                <input type="text" id="town-city" name="town-city" required>
+                            </div>
+                
+                            <div>
+                                <label for="postcode">Postcode:</label>
+                                <input type="text" id="postcode" name="postcode" required>
+                            </div>
+
+                            <button class="submitBTN">Submit</button>
+                        </form>
+                    </section>
+                </dialog>
+            </div>
+
             <section class="lost-and-found-grid">
                 <article class="lost-item">
                     <img src="images/lost-and-found/raincoat.jpg" alt="A bright yellow raincoat">
                     <h4>Coat</h4>
-                    <button>Claim me!</button>
+                    <button class="claimBTN">Claim me!</button>
                 </article>
                 <article class="lost-item">
                     <img src="images/lost-and-found/iphone.png" alt="An iPhone">
                     <h4>iPhone</h4>
-                    <button>Claim me!</button>
+                    <button class="claimBTN">Claim me!</button>
                 </article>
                 <article class="lost-item">
                     <img src="images/lost-and-found/wellies.jpg" alt="A pair of green wellington boots">
                     <h4>Wellies</h4>
-                    <button>Claim me!</button>
+                    <button class="claimBTN">Claim me!</button>
                 </article>
                 <article class="lost-item">
                     <img src="images/lost-and-found/stuffed-animal.jpg" alt="A pair of green wellington boots">
                     <h4>Stuffed animal</h4>
-                    <button>Claim me!</button>
+                    <button class="claimBTN">Claim me!</button>
                 </article>
             </section>
         </main>
