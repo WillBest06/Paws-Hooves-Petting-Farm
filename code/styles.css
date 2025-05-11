@@ -153,6 +153,7 @@
 .review {
     background-color: white;
     padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 /* accessibility */
@@ -172,6 +173,7 @@
     padding: 1rem;
     background-color: white;
     gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .accessibility-card img {
@@ -197,6 +199,7 @@
     background-color: white;
     padding: 1rem;
     gap: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .lost-item button {
@@ -249,10 +252,6 @@
  .active{
     display: block;
   }
-
-
-
-
 
 /* Lost and found modal */
 
