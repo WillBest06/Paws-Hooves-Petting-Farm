@@ -156,6 +156,26 @@
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+/* Review image carousel */
+
+#carouselExampleControlsNoTouching {
+    width: clamp(300px, 80%, 1000px);
+    height: auto;
+}
+
+.carousel-item {
+    width: 80%;
+    height: auto;
+}
+
+#carouselExampleControlsNoTouching img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9 ;
+}
+
+
 /* accessibility */
 
 .accessibility-grid {
