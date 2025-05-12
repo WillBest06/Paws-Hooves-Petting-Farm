@@ -217,5 +217,26 @@
     display: block;
   }
 
+/* contact container */
 
+.contact-locate-container {
+    width: 100%;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "contact location";
+}
+
+.contact-info{
+    grid-area: contact;
+    padding: 1rem;
+}
+
+.location-info{
+    grid-area: location;
+    padding: 1rem;
+}
 
