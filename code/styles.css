@@ -325,3 +325,84 @@
     font-size: 1.5rem;
     width: 100%
 }
+
+/* adoption */
+
+.adoption-grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    justify-items: center;
+}
+
+.adoption-card {
+    display: flex;
+    padding: 1rem;
+    background-color: white;
+    width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+    .adoption-card {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dog-image {
+        width: auto;
+        height: 50%;
+    }
+
+    .adoption-info {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .adoption-card {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dog-image {
+        width: 50%;
+        height: auto;
+    }
+
+    .adoption-info {
+        width: 50%;
+    }
+}
+
+.dog-image {
+    min-width: 200px;
+}
+
+.adoption-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.adoption-info {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.adoption-info h4 {
+    font-size: 3rem;
+}
+
+.adoption-info p {
+    font-size: 1.25rem;
+}
+
+.adoption-info button {
+    padding: 1rem;
+}
