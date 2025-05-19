@@ -406,3 +406,52 @@
 .adoption-info button {
     padding: 1rem;
 }
+
+/* faqs */
+
+.faq-container {
+    background-color: white;
+    padding: 1rem;
+    width: clamp(400px, 60%, 1000px);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.faq-title {
+    align-self: center;
+    font-size: 2rem;
+}
+
+.faqs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid gray;
+}
+
+.faq-question {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    font-size: 1.2rem;
+}
+
+.faq-question .icon {
+    font-size: 3rem;
+}
+
+.faq-answer {
+    display: none;
+    padding: 1rem;
+}
