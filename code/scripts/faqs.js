@@ -1,5 +1,9 @@
 const faqs = [
     {
+        question: "How much are tickets?",
+        answer: "Adult (16+) tickets: £10. Children (5-16): £5. OAPs and Children under 5 go free."
+    },
+    {
         question: "Are dogs allowed?",
         answer: "Only guide dogs are allowed to make sure that the animals don't get scared."
     },
@@ -8,8 +12,12 @@ const faqs = [
         answer: "We have 2 car parks: a main one and an overflow one."
     },
     {
-        question: "Are parking spaces available onsite?",
-        answer: "We have 2 car parks: a main one and an overflow one."
+        question: "Can I bring a group to the zoo?",
+        answer: "Of course you can! For groups larger than 10 people, contact us for an exclusive discount!"
+    },
+    {
+        question: "Can visitors feed the animals?",
+        answer: "To ensure that our animals have the most natural life possible, we do not handle the majority of our animals. You can however get closer to a lot of the animals on site, including our friendly farm animals in the Village Farm."
     },
 ]
 
