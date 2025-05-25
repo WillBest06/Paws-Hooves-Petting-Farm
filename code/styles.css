@@ -156,6 +156,26 @@
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+/* Review image carousel */
+
+#carouselExampleControlsNoTouching {
+    width: clamp(300px, 80%, 1000px);
+    height: auto;
+}
+
+.carousel-item {
+    width: 80%;
+    height: auto;
+}
+
+#carouselExampleControlsNoTouching img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9 ;
+}
+
+
 /* accessibility */
 
 .accessibility-grid {
@@ -304,4 +324,133 @@
 .claimItemModal form div input {
     font-size: 1.5rem;
     width: 100%
+}
+
+/* adoption */
+
+.adoption-grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    justify-items: center;
+}
+
+.adoption-card {
+    display: flex;
+    padding: 1rem;
+    background-color: white;
+    width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+    .adoption-card {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dog-image {
+        width: auto;
+        height: 50%;
+    }
+
+    .adoption-info {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .adoption-card {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dog-image {
+        width: 50%;
+        height: auto;
+    }
+
+    .adoption-info {
+        width: 50%;
+    }
+}
+
+.dog-image {
+    min-width: 200px;
+}
+
+.adoption-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.adoption-info {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.adoption-info h4 {
+    font-size: 3rem;
+}
+
+.adoption-info p {
+    font-size: 1.25rem;
+}
+
+.adoption-info button {
+    padding: 1rem;
+}
+
+/* faqs */
+
+.faq-container {
+    background-color: white;
+    padding: 1rem;
+    width: clamp(400px, 60%, 1000px);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.faq-title {
+    align-self: center;
+    font-size: 2rem;
+}
+
+.faqs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid gray;
+}
+
+.faq-question {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.faq-question .icon {
+    font-size: 3rem;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0.5rem;
 }
