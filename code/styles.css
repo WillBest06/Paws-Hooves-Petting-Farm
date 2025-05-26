@@ -95,10 +95,15 @@
     padding: 1rem;
 }
 
-.nav-list li:hover, .dropdown a:hover{
+.nav-list li:hover, 
+.dropdown a:hover{
     cursor: pointer;
     outline: 2px solid black;
 }
+
+.nav-list li:hover::after{
+    content: "\1F517\FE0E"; /* HyperLink symbol */
+} 
 
 /* navbar dropdown menus */
 
