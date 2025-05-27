@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/header.js" defer></script>
     <script src="scripts/favicon.js" defer></script>
+    <script src="scripts/volunteerModal.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    
 </head>
 
 <body>
@@ -25,13 +24,20 @@
 
         </nav>
         <main class="main">
-            <p>If you would like to volunteer with us</p>
-            <button class="openVolunteerModal">Get in touch</button>
+            <div class="volunteering-info">
+                <ul>
+                    <li>Paws & Hooves couldn't run without our large network of lovely volunteers!</li>
+                    <li>If you can spare even just a morning or afternoon each week then we'd love to have you join our team.</li>
+                    <li>Click the button below to open the volunteering form.</li>
+                    <li>Just give us your name and email and one of our managers will be in touch!</li>
+                </ul>
+                <button class="open-volunteer-modal">Get in touch</button>
+            </div>
 
             <div class="modal-container">
-                <dialog class="claimItemModal">
+                <dialog class="modal">
                     <section>
-                        <button class="closeBTN">Close</button>
+                        <button class="close-modal">Close</button>
                         <form action="" method="get">
                             <div>
                                 <label for="fname">First name:</label>
@@ -55,14 +61,6 @@
             </div>
         </main>
     </div>
-
-    <script>
-        const formOpenBTN = document.querySelector('.openVolunteerModal');
-        const modal = document.querySelector('dialog');
-        const closeModalBTN = document.querySelector('.closeBTN');
-        formOpenBTN.addEventListener('click', () => modal.showModal());
-        closeModalBTN.addEventListener('click', () => modal.close());
-    </script>
 </body>
 
 </html>
