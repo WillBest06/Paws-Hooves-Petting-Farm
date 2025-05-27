@@ -1,13 +1,12 @@
 const claimBTN = document.querySelectorAll('.claimBTN');
-const claimItemModal = document.querySelector('dialog');
-const closeClaimItemModal = document.querySelector('.close-modal');
+const modal = document.querySelector('dialog');
+const closeModalBTN = document.querySelector('.closeBTN');
 
 claimBTN.forEach((button) => button.addEventListener('click', (e) => {
-    claimItemModal.showModal();
+    modal.showModal();
     const lostItem = e.target.parentElement;
-    const lostItemName = lostItem.querySelector('h4').textContent; // adds name of item to be claimed to form
-    const formLostItem = claimItemModal.querySelector('#itemClaimed');
+    const lostItemName = lostItem.querySelector('h4').textContent;
+    const formLostItem = modal.querySelector('#itemClaimed');
     formLostItem.value = lostItemName;
 }));
-
-closeClaimItemModal.addEventListener('click', () => claimItemModal.close());
+closeModalBTN.addEventListener('click', () => modal.close());
