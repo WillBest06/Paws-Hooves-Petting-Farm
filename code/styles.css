@@ -7,7 +7,7 @@
     --sageGreen: #90C08D;
     --cornflowerBlue: #9EC9E7;
     --burntOrange: #E9724C;
-
+    --shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .site-container {
@@ -30,10 +30,16 @@
     grid-area: head;
     background-color: var(--sageGreen);
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
+}
+
+.head-container {
+    display: flex;
     gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .head-link {
@@ -210,7 +216,7 @@
 .review {
     background-color: white;
     padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: var(--shadow)
 }
 
 /* Review image carousel */
@@ -249,7 +255,7 @@
     padding: 1rem;
     background-color: white;
     gap: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: var(--shadow)
 }
 
 .accessibility-card img {
@@ -275,7 +281,7 @@
     background-color: white;
     padding: 1rem;
     gap: 10px;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: var(--shadow)
 }
 
 .lost-item button {
@@ -502,19 +508,39 @@
     display: flex;
     height: 100%;
     gap: 2rem;
+    position: relative;
 }
 
 .shop-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    width: 90%;
+    width: 100%;
     gap: 2rem;
 }
 
+.shop-toggle-cart{
+    width: auto;
+    padding: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
 .shop-cart {
-    width: 20%;
+    display: none;
+    width: 350px;
     height: 100%;
     background-color: white;
+    border-radius: 1rem;
+    border: 1px solid black;
+    box-shadow: var(--shadow)
+}
+
+.shop-cart.active {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 .shop-item {
@@ -529,6 +555,8 @@
 .shop-item-image {
     width: 100%;;
     height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 .shop-item-buy {
@@ -538,4 +566,8 @@
     color: white;
     border: none;
     border-radius: 1rem;
+}
+
+.shop-item-buy:hover {
+    opacity: 80%;
 }

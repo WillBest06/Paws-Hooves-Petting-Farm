@@ -8,25 +8,25 @@ const shopItems = [
     {
         'name': 'Paws & Hooves hat',
         'price': 5.00,
-        'image': "images/shop/plush-rabbit.jpg",
-        'alt': 'A blue baseball cap with the petting zoo logo',
+        'image': "images/shop/junior-zookeeper-cap.webp",
+        'alt': 'A green cap that reads "Junior Zookeeper"',
     },
     {
-        'name': 'Miniature pony keychain',
+        'name': 'Pony club keychain',
         'price': 4.50,
-        'image': "images/shop/keychain-pony.jpg",
-        'alt': 'A small plastic keychain in the shape of a pony',
+        'image': "images/shop/pony-keychain.jpg",
+        'alt': 'A small plastic keychain showing that the owner is a member of the pink pony club',
     },
     {
-        'name': 'Farm animal sticker pack',
+        'name': 'Animal sticker pack',
         'price': 3.00,
-        'image': "images/shop/stickers-farm.jpg",
+        'image': "images/shop/sticker-pack.avif",
         'alt': 'A pack of stickers featuring various farm animals',
     },
     {
         'name': 'Cornish flag pin badge',
         'price': 2.50,
-        'image': "images/shop/pin-cornish-flag.jpg",
+        'image': "images/shop/cornish-pin-badge.jpg",
         'alt': 'A metal pin badge with the Cornish flag design',
     },
     {
@@ -57,7 +57,7 @@ function createItem(url, alt, name, price) {
     itemName.classList.toggle('shop-item-name');
 
     const itemPrice = document.createElement('h3');
-    itemPrice.textContent = `£${price}`;
+    itemPrice.textContent = `£${price.toFixed(2)}`; // displays prices to 2 dp
     itemPrice.classList.toggle('shop-item-price');
 
     const itemBuy = document.createElement('button');
@@ -74,6 +74,5 @@ function createItem(url, alt, name, price) {
 }
 
 for (let item of shopItems) {
-    createItem(item.image, item.alt, item.name, item.price);
+    createItem(item.image, item.alt, item.name, item.price); 
 }
-
