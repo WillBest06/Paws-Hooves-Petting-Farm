@@ -51,6 +51,7 @@ const shopItems = [
 ];
 
 let basket = [];
+let runningTotal = 0;
 
 function createTogglebasketIcon() {
     const header = document.querySelector('.head');
@@ -68,7 +69,6 @@ createTogglebasketIcon();
 function createShopItem(id, src, alt, name, price) {
     const itemCard = document.createElement('article');
     itemCard.classList.toggle('shop-item');
-    
 
     const itemImage = document.createElement('img');
     itemImage.src = src;
@@ -88,7 +88,7 @@ function createShopItem(id, src, alt, name, price) {
     itemAddToBasket.classList.toggle('shop-item-add');
     itemAddToBasket.setAttribute('data-product-id', id);
     itemAddToBasket.addEventListener('click', (e) => {
-        addItemToBasket(e.target.getAttribute('data-product-id'))
+        addItemToBasketArray(e.target.getAttribute('data-product-id'))
         updateBasket(basket);
     });
 
@@ -105,7 +105,7 @@ for (let item of shopItems) {
     createShopItem(item.id, item.src, item.alt, item.name, item.price); 
 };
 
-function addItemToBasket (itemID) {
+function addItemToBasketArray (itemID) {
     const itemIndex = binarySearchForShopItem(shopItems, itemID);
     const item = shopItems[itemIndex];
     const basketIconQuantity = document.querySelector('.shop-toggle-basket-icon-quantity');
@@ -117,14 +117,19 @@ function addItemToBasket (itemID) {
         item['quantity'] = 1;
         basket.push(item);
     };
+
+    runningTotal += (item['price']);
 };
 
 function updateBasket (basketArr) {
     const basket = document.querySelector('.shop-basket');
-
+    
     while (basket.firstChild) {
         basket.removeChild(basket.firstChild);
     }
+
+    const subTotal = document.createElement('h3');
+    basket.appendChild(subTotal);
 
     basketArr.forEach(item => {
         const itemContainer = document.createElement('div');
@@ -142,10 +147,10 @@ function updateBasket (basketArr) {
 
         const itemPrice = document.createElement('h4');
         itemPrice.textContent = `£${(item.price * item.quantity).toFixed(2)}`;
+        subTotal.textContent = `Subtotal: £${runningTotal.toFixed(2)}`;
 
         const itemQuantity = document.createElement('p');
         itemQuantity.textContent = `Qty: ${item.quantity}`;
-
         
         itemDetails.appendChild(itemName);
         itemDetails.appendChild(itemPrice);
@@ -155,7 +160,7 @@ function updateBasket (basketArr) {
         itemContainer.appendChild(itemDetails);
         
         basket.appendChild(itemContainer);
-    });
+    }); 
 }
 
 function binarySearchForShopItem (arr, target) {
