@@ -518,31 +518,6 @@
     gap: 2rem;
 }
 
-.shop-toggle-cart{
-    width: auto;
-    padding: 1rem;
-    background-color: transparent;
-    cursor: pointer;
-    border: 1px solid white;
-}
-
-.shop-cart {
-    display: none;
-    width: 350px;
-    height: 100%;
-    background-color: white;
-    border-radius: 1rem;
-    border: 1px solid black;
-    box-shadow: var(--shadow)
-}
-
-.shop-cart.active {
-    display: block;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
 .shop-item {
     background-color: white;
     padding: 1rem;
@@ -559,15 +534,80 @@
     object-fit: cover;
 }
 
-.shop-item-buy {
+.shop-item-add {
     padding: .5rem;
-    background-color: green;
-    cursor: pointer;
     color: white;
+    background-color: green;
     border: none;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
-.shop-item-buy:hover {
+.shop-item-add:hover {
     opacity: 80%;
+}
+
+.shop-toggle-basket {
+    width: auto;
+    padding: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid white;
+    position: relative;
+}
+
+.shop-toggle-basket-icon {
+    font-size: 3rem;
+    color: white;
+}
+
+.shop-toggle-basket-icon-quantity {
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: -.5rem;
+    right: -.5rem;
+    padding: .25rem;
+    border-radius: .5rem;
+}
+
+.shop-basket {
+    display: none;
+    width: 350px;
+    height: 100%;
+    background-color: white;
+    border-radius: 1rem;
+    border: 1px solid black;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+
+}
+
+.shop-basket.active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.shop-basket-item {
+    display: flex;
+    border: 1px solid black;
+}
+
+.shop-basket-item-thumbnail {
+    width: 100px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.shop-basket-item-details {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
