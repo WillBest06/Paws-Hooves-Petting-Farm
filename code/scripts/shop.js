@@ -51,7 +51,7 @@ const shopItems = [
 ];
 
 let basket = [];
-let runningTotal = 0;
+let subtotal = 0;
 
 function createTogglebasketIcon() {
     const header = document.querySelector('.head');
@@ -118,7 +118,8 @@ function addItemToBasketArray (itemID) {
         basket.push(item);
     };
 
-    runningTotal += (item['price']);
+    subtotal = updateSubtotal();
+    updateBasketIconQuantity(basket);
 };
 
 function updateBasket (basketArr) {
@@ -126,7 +127,7 @@ function updateBasket (basketArr) {
     
     while (basket.firstChild) {
         basket.removeChild(basket.firstChild);
-    }
+    };
 
     const subTotal = document.createElement('h3');
     basket.appendChild(subTotal);
@@ -147,21 +148,75 @@ function updateBasket (basketArr) {
 
         const itemPrice = document.createElement('h4');
         itemPrice.textContent = `£${(item.price * item.quantity).toFixed(2)}`;
-        subTotal.textContent = `Subtotal: £${runningTotal.toFixed(2)}`;
+        subTotal.textContent = `Subtotal: £${subtotal.toFixed(2)}`;
+
+        const itemDecrementQuantity = document.createElement('button');
+        itemDecrementQuantity.textContent = '-';
+        itemDecrementQuantity.classList.toggle('decrementQuantity');
+        itemDecrementQuantity.setAttribute('data-product-id', item.id);
+        itemDecrementQuantity.addEventListener('click', () => decrementQuantity(item));
 
         const itemQuantity = document.createElement('p');
         itemQuantity.textContent = `Qty: ${item.quantity}`;
+
+        const itemIncrementQuantity = document.createElement('button');
+        itemIncrementQuantity.textContent = '+';
+        itemIncrementQuantity.classList.toggle('incrementQuantity');
+        itemIncrementQuantity.setAttribute('data-product-id', item.id);
+        itemIncrementQuantity.addEventListener('click', () => incrementQuantity(item));
         
         itemDetails.appendChild(itemName);
         itemDetails.appendChild(itemPrice);
+        itemDetails.appendChild(itemDecrementQuantity);
         itemDetails.appendChild(itemQuantity);
+        itemDetails.appendChild(itemIncrementQuantity);
 
         itemContainer.appendChild(itemThumbnail);
         itemContainer.appendChild(itemDetails);
         
         basket.appendChild(itemContainer);
     }); 
+};
+
+function incrementQuantity (item) {
+    item.quantity++;
+    subtotal = updateSubtotal();
+    updateBasketIconQuantity(basket);
+    updateBasket(basket);
 }
+
+function decrementQuantity(item) {
+    if (item.quantity > 1) {
+        item.quantity--;
+    } else {
+        basket = basket.filter((currentItem) => currentItem.id != item.id); // deletes item if quantity goes below 1
+    }
+
+    subtotal = updateSubtotal();
+    updateBasketIconQuantity(basket);
+    updateBasket(basket);
+}
+
+function updateSubtotal () {
+    let subtotal = 0;
+
+    basket.forEach(item => {
+        subtotal += (item.price * item.quantity)
+    });
+
+    return subtotal;
+}
+
+function updateBasketIconQuantity (basketArr) {
+    const basketIconQuantity = document.querySelector('.shop-toggle-basket-icon-quantity');
+    let totalItems = 0;
+
+    basketArr.forEach(item => {
+        totalItems += item.quantity;
+    })
+
+    basketIconQuantity.textContent = totalItems;
+};
 
 function binarySearchForShopItem (arr, target) {
     let left = 0;
