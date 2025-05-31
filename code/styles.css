@@ -591,6 +591,7 @@
     position: absolute;
     top: 0px;
     right: 0px;
+    overflow-y: scroll;
 }
 
 .shop-basket-item {
@@ -599,7 +600,7 @@
 }
 
 .shop-basket-item-thumbnail {
-    width: 100px;
+    width: 40%;
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -610,4 +611,23 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 60%;
+}
+
+.shop-basket-item-increment-quantity, 
+.shop-basket-item-decrement-quantity {
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    
+}
+
+.shop-basket-item-decrement-quantity {
+    background-color: red;
+    color: white;
+}
+
+.shop-basket-item-increment-quantity {
+    background-color: green;
+    color: white;
 }

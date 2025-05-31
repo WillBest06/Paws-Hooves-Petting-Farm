@@ -55,38 +55,38 @@ let subtotal = 0;
 
 function createTogglebasketIcon() {
     const header = document.querySelector('.head');
-    const basket = document.querySelector('.shop-basket');
+    const basketElement = document.querySelector('.shop-basket');
     const toggleBasket = document.createElement('button');
     toggleBasket.classList.toggle('shop-toggle-basket');
     toggleBasket.innerHTML = `<i class="bi bi-basket3 shop-toggle-basket-icon"></i> <div class="shop-toggle-basket-icon-quantity">0</div>`;
     header.appendChild(toggleBasket);
 
-    toggleBasket.addEventListener('click', () => basket.classList.toggle('active'));
+    toggleBasket.addEventListener('click', () => basketElement.classList.toggle('active'));
 };
 
 createTogglebasketIcon();
 
-function createShopItem(id, src, alt, name, price) {
+function createShopItem(item) {
     const itemCard = document.createElement('article');
     itemCard.classList.toggle('shop-item');
 
     const itemImage = document.createElement('img');
-    itemImage.src = src;
-    itemImage.alt = alt;
+    itemImage.src = item.src;
+    itemImage.alt = item.alt;
     itemImage.classList.toggle('shop-item-image');
 
     const itemName = document.createElement('h2');
-    itemName.textContent = name;
+    itemName.textContent = item.name;
     itemName.classList.toggle('shop-item-name');
 
     const itemPrice = document.createElement('h3');
-    itemPrice.textContent = `£${price.toFixed(2)}`; // displays prices to 2 dp
+    itemPrice.textContent = `£${item.price.toFixed(2)}`; // displays prices to 2 dp
     itemPrice.classList.toggle('shop-item-price');
 
     const itemAddToBasket = document.createElement('button');
     itemAddToBasket.textContent = 'Add to basket'
     itemAddToBasket.classList.toggle('shop-item-add');
-    itemAddToBasket.setAttribute('data-product-id', id);
+    itemAddToBasket.setAttribute('data-product-id', item.id);
     itemAddToBasket.addEventListener('click', (e) => {
         addItemToBasketArray(e.target.getAttribute('data-product-id'))
         updateBasket(basket);
@@ -102,7 +102,7 @@ function createShopItem(id, src, alt, name, price) {
 };
 
 for (let item of shopItems) {
-    createShopItem(item.id, item.src, item.alt, item.name, item.price); 
+    createShopItem(item); 
 };
 
 function addItemToBasketArray (itemID) {
@@ -152,7 +152,7 @@ function updateBasket (basketArr) {
 
         const itemDecrementQuantity = document.createElement('button');
         itemDecrementQuantity.textContent = '-';
-        itemDecrementQuantity.classList.toggle('decrementQuantity');
+        itemDecrementQuantity.classList.toggle('shop-basket-item-decrement-quantity');
         itemDecrementQuantity.setAttribute('data-product-id', item.id);
         itemDecrementQuantity.addEventListener('click', () => decrementQuantity(item));
 
@@ -161,7 +161,7 @@ function updateBasket (basketArr) {
 
         const itemIncrementQuantity = document.createElement('button');
         itemIncrementQuantity.textContent = '+';
-        itemIncrementQuantity.classList.toggle('incrementQuantity');
+        itemIncrementQuantity.classList.toggle('shop-basket-item-increment-quantity');
         itemIncrementQuantity.setAttribute('data-product-id', item.id);
         itemIncrementQuantity.addEventListener('click', () => incrementQuantity(item));
         
