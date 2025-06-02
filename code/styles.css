@@ -101,15 +101,10 @@
     padding: 1rem;
 }
 
-.nav-list li:hover, 
-.dropdown a:hover{
+.nav-list li:hover, .dropdown a:hover{
     cursor: pointer;
     outline: 2px solid black;
 }
-
-.nav-list li:hover::after{
-    content: "\1F517\FE0E"; /* HyperLink symbol */
-} 
 
 /* navbar dropdown menus */
 
@@ -150,58 +145,6 @@
     padding: 2rem;
 }
 
-/* modal dialog generic styles */
-
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1rem;
-    width: clamp(300px, 50%, 500px);
-}
-
-.modal button {
-    padding: 1rem;
-    color: white;
-    border: none;
-    border-radius: 2rem;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.modal section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.modal .close-modal {
-    background-color: red;
-}
-
-.modal .submitBTN {
-    background-color: green;
-}
-
-.modal form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.modal form div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: .5rem;
-}
-
-.modal form div input {
-    font-size: 1.5rem;
-    width: 100%
-}
-
 /* reviews */
 
 .review-grid {
@@ -237,6 +180,7 @@
     object-fit: cover;
     aspect-ratio: 16 / 9 ;
 }
+
 
 /* accessibility */
 
@@ -335,10 +279,121 @@
     display: block;
   }
 
+
+/* contact container */
+
+.contact-locate-container {
+    width: 100%;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "contact location";
+}
+
+.contact-info{
+    grid-area: contact;
+    padding: 1rem;
+}
+
+.email-form input, .email-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.email-form button[type="submit"] {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: var(--burntOrange);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.email-form button[type="submit"]:hover {
+    background-color: darken(var(--burntOrange), 10%);
+}
+
+
+.location-info{
+    grid-area: location;
+    padding: 1rem;
+    min-width: 300px;
+}
+
+.location-info iframe {
+    width: 100%;
+    border: none;
+}
+
+@media (max-width: 700px) {
+    .contact-locate-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "contact"
+            "location";
+    }
+
+/* Lost and found modal */
+
+.claimItemModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    width: clamp(250px, 50%, 500px);
+}
+
+.claimItemModal section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.claimItemModal .closeBTN,
+.claimItemModal .submitBTN {
+    padding: 1rem;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.claimItemModal .closeBTN {
+    background-color: red;
+}
+
+.claimItemModal .submitBTN {
+    background-color: green;
+}
+
+.claimItemModal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.claimItemModal form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .5rem;
+}
+
+.claimItemModal form div input {
+    font-size: 1.5rem;
+    width: 100%
+}
+
 /* adoption */
 
 .adoption-grid {
-    width: 60%;
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr;
     gap: 4rem;
@@ -352,11 +407,7 @@
     width: 100%;
 }
 
-@media only screen and (max-width: 1100px) {
-    .adoption-grid {
-        width: 90%;
-    }
-
+@media only screen and (max-width: 700px) {
     .adoption-card {
         flex-direction: column;
         justify-content: center;
@@ -373,7 +424,7 @@
     }
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 700px) {
     .adoption-card {
         flex-direction: row;
         justify-content: center;
@@ -419,39 +470,6 @@
 .adoption-info button {
     padding: 1rem;
 }
-
-/* volunteer */
-
-.open-volunteer-modal {
-    padding: 1rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 1rem;
-}
-
-.open-volunteer-modal:hover {
-    opacity: 60%;
-}
-
-.volunteering-info {
-    background: white;
-    padding: 1rem;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    width: clamp(450px, 80%, 800px);
-    gap: 20px;
-}
-
-.volunteering-info ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    gap: 20px;
-    font-size: 1.25rem;
-}  
 
 /* faqs */
 
@@ -500,6 +518,7 @@
     display: none;
     padding: 0.5rem;
 }
+
 
 /* gift shop */
 
