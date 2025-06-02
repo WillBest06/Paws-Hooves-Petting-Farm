@@ -7,7 +7,7 @@
     --sageGreen: #90C08D;
     --cornflowerBlue: #9EC9E7;
     --burntOrange: #E9724C;
-
+    --shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .site-container {
@@ -30,10 +30,16 @@
     grid-area: head;
     background-color: var(--sageGreen);
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
+}
+
+.head-container {
+    display: flex;
     gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .head-link {
@@ -210,7 +216,7 @@
 .review {
     background-color: white;
     padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: var(--shadow)
 }
 
 /* Review image carousel */
@@ -249,7 +255,7 @@
     padding: 1rem;
     background-color: white;
     gap: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: var(--shadow)
 }
 
 .accessibility-card img {
@@ -275,7 +281,7 @@
     background-color: white;
     padding: 1rem;
     gap: 10px;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: var(--shadow)
 }
 
 .lost-item button {
@@ -493,4 +499,135 @@
 .faq-answer {
     display: none;
     padding: 0.5rem;
+}
+
+/* gift shop */
+
+.shop-container {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    gap: 2rem;
+    position: relative;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
+    gap: 2rem;
+}
+
+.shop-item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.shop-item-image {
+    width: 100%;;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.shop-item-add {
+    padding: .5rem;
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.shop-item-add:hover {
+    opacity: 80%;
+}
+
+.shop-toggle-basket {
+    width: auto;
+    padding: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid white;
+    position: relative;
+}
+
+.shop-toggle-basket-icon {
+    font-size: 3rem;
+    color: white;
+}
+
+.shop-toggle-basket-icon-quantity {
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: -.5rem;
+    right: -.5rem;
+    padding: .25rem;
+    border-radius: .5rem;
+}
+
+.shop-basket {
+    display: none;
+    width: 350px;
+    height: 100%;
+    background-color: white;
+    border-radius: 1rem;
+    border: 1px solid black;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+
+}
+
+.shop-basket.active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    overflow-y: scroll;
+}
+
+.shop-basket-item {
+    display: flex;
+    border: 1px solid black;
+}
+
+.shop-basket-item-thumbnail {
+    width: 40%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.shop-basket-item-details {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.shop-basket-item-increment-quantity, 
+.shop-basket-item-decrement-quantity {
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    
+}
+
+.shop-basket-item-decrement-quantity {
+    background-color: red;
+    color: white;
+}
+
+.shop-basket-item-increment-quantity {
+    background-color: green;
+    color: white;
 }
