@@ -273,6 +273,64 @@
     display: block;
   }
 
+
+/* contact container */
+
+.contact-locate-container {
+    width: 100%;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "contact location";
+}
+
+.contact-info{
+    grid-area: contact;
+    padding: 1rem;
+}
+
+.email-form input, .email-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.email-form button[type="submit"] {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: var(--burntOrange);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.email-form button[type="submit"]:hover {
+    background-color: darken(var(--burntOrange), 10%);
+}
+
+
+.location-info{
+    grid-area: location;
+    padding: 1rem;
+    min-width: 300px;
+}
+
+.location-info iframe {
+    width: 100%;
+    border: none;
+}
+
+@media (max-width: 700px) {
+    .contact-locate-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "contact"
+            "location";
+    }
+
 /* Lost and found modal */
 
 .claimItemModal {
@@ -454,3 +512,4 @@
     display: none;
     padding: 0.5rem;
 }
+
