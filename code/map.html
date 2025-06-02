@@ -55,7 +55,7 @@
                         else{
                             const coords = area.getAttribute("coords").split(",").map(Number);
                             const x = (coords[0] + coords[2]) / 2;
-                            const y = (coords[1] + coords[3]) / 2;
+                            const y = ((coords[1] + coords[3]) / 2)+100;
                             console.log(area.alt + " clicked!"); // Debug line
                             popup.style.top = `${y}px`;
                             popup.style.left = `${x}px`;
