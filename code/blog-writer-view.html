@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog author</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/favicon.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="site-container">
+        <header class="head">
+            <!-- inserted with script -->
+        </header>
+        <nav class="navi">
+            <!-- inserted with script -->
+        </nav>
+        <main class="main">
+            <script>
+                document.addEventListener('DOMContentLoaded', (event) => {
+                    document.getElementById('date').valueAsDate = new Date();}
+                );
+            </script>
+            
+            <div class = "author-container">
+            <h1>Author View</h1>
+            <p>Welcome to the blog author view! Here you can create and manage your blog posts.</p>
+            <div class="blog-form-container">
+                <form class="blog-form">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+
+                    <label for="content">Content:</label>
+                    <textarea id="content" name="content" required></textarea>
+
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <button type="submit">Publish Post</button>
+                </form>
+            </div>
+            <h2>Existing Posts</h2>
+            <div class="existing-posts">
+                <article class="blog-post">
+                    <h3>Sample Post Title</h3>
+                    <p>Sample post content goes here. This is a placeholder for an existing blog post.</p>
+                    <p>Posted on: 2024-10-01</p>
+                    <button type="button" class="edit-post">Edit</button>
+                    <button type="button" class="delete-post">Delete</button>
+                </article>
+                </div>
+            </div>
+
+        </main>
+
+</body>
+
+
+</html>
