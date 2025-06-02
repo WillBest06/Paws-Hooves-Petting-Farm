@@ -336,7 +336,7 @@
             "contact"
             "location";
     }
-
+}
 /* Lost and found modal */
 
 .claimItemModal {
@@ -471,6 +471,39 @@
     padding: 1rem;
 }
 
+/* volunteer */
+
+.open-volunteer-modal {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+
+.open-volunteer-modal:hover {
+    opacity: 60%;
+}
+
+.volunteering-info {
+    background: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: clamp(450px, 80%, 800px);
+    gap: 20px;
+}
+
+.volunteering-info ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+    font-size: 1.25rem;
+}  
+
 /* faqs */
 
 .faq-container {
@@ -518,7 +551,6 @@
     display: none;
     padding: 0.5rem;
 }
-
 
 /* gift shop */
 
