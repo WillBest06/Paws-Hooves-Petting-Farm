@@ -197,6 +197,58 @@
     width: 100%
 }
 
+/* homepage */
+
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.image-carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#carouselExampleControlsNoTouching {
+    width: clamp(300px, 80%, 1000px);
+    height: auto;
+}
+
+.carousel-item {
+    width: 80%;
+    height: auto;
+}
+
+#carouselExampleControlsNoTouching img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+.welcome {
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 70%;
+    color: white;
+}
+
+.welcome h3 {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+}
+
+.welcome p {
+    font-size: 1.5rem;
+}
+
 /* reviews */
 
 .review-grid {
@@ -213,26 +265,6 @@
     padding: 1rem;
     box-shadow: var(--shadow)
 }
-
-/* Review image carousel */
-
-#carouselExampleControlsNoTouching {
-    width: clamp(300px, 80%, 1000px);
-    height: auto;
-}
-
-.carousel-item {
-    width: 80%;
-    height: auto;
-}
-
-#carouselExampleControlsNoTouching img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 16 / 9 ;
-}
-
 
 /* accessibility */
 
