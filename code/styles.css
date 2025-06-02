@@ -631,3 +631,29 @@
     background-color: green;
     color: white;
 }
+
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-header {
+    
+    padding: 1rem;
+    width: clamp(300px, 80%, 1000px);
+
+}
+
+
+
+.blog-post {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    width: clamp(300px, 80%, 1000px);
+}
