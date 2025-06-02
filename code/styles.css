@@ -356,6 +356,7 @@
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    resize: vertical;
 }
 .email-form button[type="submit"] {
     padding: 0.5rem 1rem;
