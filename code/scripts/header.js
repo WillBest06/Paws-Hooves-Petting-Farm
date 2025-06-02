@@ -110,6 +110,7 @@ function createNavbar () {
             'name': 'Information',
             'submenu': [{ 'name': 'Contact and Locate us', 'hyperlink': 'contact-locate.html' },
                         { 'name': 'FAQs', 'hyperlink': 'faqs.html' },
+                        { 'name': 'Lost and Found', 'hyperlink': 'lost-and-found.html' },
                         { 'name': 'Volunteer with us', 'hyperlink': 'volunteer.html' },
                         { 'name': 'Accessibility', 'hyperlink': 'accessibility.html' },
                         { 'name': 'Our Green Commitments', 'hyperlink': 'green-commitments.html' },]
