@@ -830,3 +830,50 @@
 
 }
 
+.cafe-page .main {
+    display:block;
+
+}
+
+.menu-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "cafe-menu cafe-hours";
+}
+.cafe-menu{
+    grid-area: cafe-menu;
+    width:auto;
+    max-width: 90%;
+    padding: 1rem;
+    background-color: #ccc;
+    border-style:solid;
+    border-color:#E9724C;
+    border-radius: 1rem;
+    border-width: 2px;
+
+    
+}
+
+.menu-item{
+    padding-bottom: 1rem;
+    width: 100%;
+
+
+}
+
+.menu-item h1{
+    font-size: 18px;
+}
+
+.menu-item p{
+    font-size: 14px;
+}
+
+.menu-price{
+    font-size: 18px;
+}
+.cafe-hours{
+    grid-area: cafe-hours;
+
+    
+}
