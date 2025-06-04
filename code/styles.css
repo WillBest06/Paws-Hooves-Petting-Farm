@@ -962,3 +962,16 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
+
+.petting-zoo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+.petting-zoo-container .carousel{
+    width: 800%;
+    max-width: 1000px;
+    min-width: 300px;
+    height: auto;
+}
