@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership
+
+    </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/favicon.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="site-container" id="siteContainer">
+        <header class="head">
+            <!-- inserted with script -->
+        </header>
+        <nav class="navi">
+            <!-- inserted with script -->
+        </nav>
+        <main class="main" id="main">
+            <div class = "membership-container">
+                <div class = "membership-head">
+                <h1>Membership</h1>
+                <p>Become a member of our farm and enjoy exclusive benefits!</p>
+                </div>
+                <div class = "membership-details">
+                <ul>
+                    <li>Free entry to the farm all year round</li>
+                    <li>Discounts at the gift shop and cafe</li>
+                    <li>Monthly newsletters with updates and events</li>
+                    <li>Special member-only events</li>
+                </ul>
+                </div>
+                <button class="membership-button" id="joinButton">Join Now</button>
+
+
+
+
+                <script>
+                    function toggleMembershipForm() {
+                        const form = document.getElementById("membershipForm");
+                        if (form.style.display === "none" || form.style.display === "") {
+                            form.style.display = "block";
+                            document.getElementById("siteContainer").style.filter = "brightness(0.5)";
+                            document.getElementById("siteContainer").style.pointerEvents = "none";
+                            document.getElementById("siteContainer").style.transition = "filter 0.3s ease";
+                        } else {
+                            form.style.display = "none";
+                            document.getElementById("siteContainer").style.filter = "none";
+                            document.getElementById("siteContainer").style.pointerEvents = "auto";
+                        }
+                    }
+
+                    document.addEventListener("DOMContentLoaded", function() {
+                        document.getElementById("joinButton").addEventListener("click", function() {
+                            toggleMembershipForm();
+                        });
+                        document.getElementById("form").addEventListener("submit", function(event) {
+                            event.preventDefault();
+                            alert("Thank you for joining! We will contact you soon.");
+                            setTimeout(() => {
+                                toggleMembershipForm();
+                            }, 1000);
+                        });
+                    });
+
+                    document.addEventListener("click", function(event) {
+                        const formContainer = document.getElementById("membershipForm");
+                        const form = document.getElementById("form");
+
+                        if (formContainer.style.display !== "block" || formContainer.contains(event.target) || event.target.id === "joinButton") {
+                            return;
+                        }
+
+                        for (const element of form.elements) {
+                            if (element.value !== "") {
+                                if (!confirm("You have unsaved changes. Are you sure you want to close the form?")) {
+                                    return;
+                                }
+                            }
+                        }
+                        toggleMembershipForm();
+                    });
+
+                </script>
+            </div>
+                
+
+
+        </main>
+    </div>
+    <div id="membershipForm" class="membership-form" style="display:none;" onsubmit="event.preventDefault();">
+        <h2>Membership Form</h2>
+        <p>Please fill out the form below to become a member.</p>
+        <form id="form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+
+</html>
