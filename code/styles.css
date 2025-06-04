@@ -837,13 +837,14 @@
 
 .menu-container{
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "cafe-menu cafe-hours";
+    min-width: 300px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    /* grid-template-areas: "cafe-menu cafe-hours"; */
 }
 .cafe-menu{
-    grid-area: cafe-menu;
-    width:auto;
-    max-width: 90%;
+    /* grid-area: cafe-menu; */
+    /* width:auto; */
     padding: 1rem;
     background-color: #ccc;
     border-style:solid;
@@ -873,7 +874,7 @@
     font-size: 18px;
 }
 .cafe-hours{
-    grid-area: cafe-hours;
+    /* grid-area: cafe-hours; */
 
     
 }
