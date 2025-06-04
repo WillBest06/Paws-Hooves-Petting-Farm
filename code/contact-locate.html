@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Location</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/header.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="site-container">
+        <header class="head">
+            <!-- inserted with script -->
+        </header>
+        <nav class="navi">
+            <!-- inserted with script -->
+        </nav>
+        <main class="main">
+            <div class="contact-locate-container">
+                <div class="contact-info">
+                    <h2>Contact Us</h2> <br>
+                    <p>If you have any questions or would like to book a visit, please reach out to us!</p>
+                    <h3>Phone us on: 0123 456789</h3>
+                    <h3>Use the form below to email us: </h3>
+
+                    <div class ="email-form">
+                    <form action="mailto: paws&hooves@example.com" method ="POST" enctype="text/plain">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    </div>
+                    <h3>Alternatively, you can email us at: paws&hooves@example.com</h3>
+                    </div>
+                <div class="location-info">
+                    <h2>Location</h2>
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81476.53764994792!2d-5.059090602734405!3d50.3452605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486b6d63d84fd627%3A0x5b14b5f93b2b3978!2sCornish%20Farm%20Experiences%20(Terras%20Farm)!5e0!3m2!1sen!2suk!4v1746537874045!5m2!1sen!2suk" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;"
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                    <p>123 Farm Lane, Animal Town, AT 12345</p>
+                    <p>Hours: Mon-Sun: 9 AM - 5 PM</p>
+
+        </main>
+
+</body>
+
+
+</html>

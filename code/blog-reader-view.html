@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/favicon.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="site-container">
+        <header class="head">
+            <!-- inserted with script -->
+        </header>
+        <nav class="navi">
+            <!-- inserted with script -->
+        </nav>
+        <main class="main">
+            <div class="blog-container">
+                <div class = "blog-header">
+                    <h1>Farm Life Blog</h1>
+                    <p>This is our farm life blog! Here you will find posts about the current updates and events around the farm</p>
+                </div>
+                    <article class="blog-post">
+                        <h2>Puppy Petting</h2>
+                        <p>One of our dogs has recently had a litter of beautiful puppies, and they are now old enough to be seen by the public!</p>
+                        <p>Come visit us at the farm to pet these adorable puppies and see them grow!</p>
+                        <p>Posted on: 2024-10-01</p>
+                        <button type="button" class="comments-collapse">Comments</button>
+                        <div class="comments">
+                            <p><strong>Jane Doe:</strong> I love puppies! Can't wait to visit the farm!</p>
+                            <p><strong>John Smith:</strong> This is amazing! I will bring my kids to see them.</p>
+
+                            <h3>Leave a Comment:</h3>
+                            <form class="comment-form">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="comment">Comment:</label>
+                                <textarea id="comment" name="comment" required></textarea>
+                                <button type="submit">Submit Comment</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article class="blog-post">
+                        <h2>New Barn Construction</h2>
+                        <p>We are excited to announce that we are building a new barn to house our livestock and equipment.</p>
+                        <p>This new barn will provide better shelter and storage for our farm operations.</p>
+                        <p>Posted on: 2024-09-15</p>
+                        <button type="button" class="comments-collapse">Comments</button>
+                        <div class="comments">
+                            <p><strong>Mary Johnson:</strong> This is great news! Can't wait to see the new barn!</p>
+                            <p><strong>Tom Brown:</strong> Looking forward to the completion of the barn. It will be a great addition to the farm.</p>
+                            <h3>Leave a Comment:</h3>
+                            <form class="comment-form">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="comment">Comment:</label>
+                                <textarea id="comment" name="comment" required></textarea>
+                                <button type="submit">Submit Comment</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article class="blog-post">
+                        <h2>Harvest Festival</h2>
+                        <p>Join us for our annual Harvest Festival! We will have games, food, and fun activities for the whole family.</p>
+                        <p>Come celebrate the bounty of the season with us!</p>
+                        <p>Posted on: 2024-08-20</p>
+                        <button type="button" class="comments-collapse">Comments</button>
+                        <div class="comments">
+                            <p><strong>Emily White:</strong> I love the Harvest Festival! It's always a great time!</p>
+                            <p><strong>Michael Green:</strong> Can't wait for the festival! I'll bring my family along.</p> 
+                            <h3>Leave a Comment:</h3>
+                            <form class="comment-form">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="comment">Comment:</label>
+                                <textarea id="comment" name="comment" required></textarea>
+                                <button type="submit">Submit Comment</button>
+                            </form>
+                        </div>
+                    </article>
+            </div>
+            <script
+                type="text/javascript">
+                document.querySelectorAll('.comments-collapse').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const commentsDiv = button.nextElementSibling;
+                        if (commentsDiv.classList.contains('active-comment')) {
+                            commentsDiv.classList.remove('active-comment');
+                            button.textContent = 'Comments';
+                        } else {
+                            commentsDiv.classList.add('active-comment');
+                            button.textContent = 'Hide Comments';
+                        }
+                    });
+                });
+            </script>
+        </main>
+
+
+</body>
+
+
+</html>
