@@ -637,7 +637,6 @@
     border: 1px solid black;
     box-shadow: var(--shadow);
     padding: 1rem;
-
 }
 
 .shop-basket.active {
@@ -961,4 +960,32 @@
     padding: 0.5rem;
     font-size: 1.2rem;
     margin-bottom: 1rem;
+}
+
+/* Meet Our Furry Friends */
+
+.furryfriends-grid {
+    width: minmax((600px + 4rem), 2600px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));
+    gap: 4rem;
+}
+
+.furryfriends-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+    gap: 2rem;
+}
+
+.furryfriends-card > .furryfriends-container {
+    width: 90%;
+}
+
+.furryfriends-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
