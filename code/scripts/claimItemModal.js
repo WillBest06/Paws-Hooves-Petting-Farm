@@ -1,6 +1,6 @@
 const claimBTN = document.querySelectorAll('.claimBTN');
 const modal = document.querySelector('dialog');
-const closeModalBTN = document.querySelector('.closeBTN');
+const closeModalBTN = document.querySelector('.close-modal');
 
 claimBTN.forEach((button) => button.addEventListener('click', (e) => {
     modal.showModal();
