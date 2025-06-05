@@ -95,7 +95,8 @@ function createNavbar () {
         },
         {
             'name': 'Facilities',
-            'submenu': [{ 'name': 'Cafe', 'hyperlink': 'cafe.html' },
+            'submenu': [{ 'name': 'Petting Zoo', 'hyperlink': 'petting-zoo.html' },
+                        { 'name': 'Cafe', 'hyperlink': 'cafe.html' },
                         { 'name': 'Gift Shop', 'hyperlink': 'shop.html' },
                         { 'name': 'Interactive Map', 'hyperlink': 'map.html' }]
         },
