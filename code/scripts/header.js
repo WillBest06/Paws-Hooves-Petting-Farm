@@ -123,10 +123,10 @@ function createNavbar () {
             'hyperlink': 'reviews.html'
         },
         {
-            'name': 'Support us',
-            'submenu': [{ 'name': 'Donate', 'hyperlink': 'donate.html' },
-                        { 'name': 'Membership', 'hyperlink': 'membership.html' }]
-        }];
+            'name': 'Membership', 
+            'hyperlink': 'membership.html'
+        },    
+        ];
 
     for (let page of pages) {
         if (!('submenu' in page)) {
