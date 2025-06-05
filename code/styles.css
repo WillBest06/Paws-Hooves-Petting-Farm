@@ -10,6 +10,10 @@
     --shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+p {
+    line-height: 1.4;
+}
+
 .site-container {
     width: 100%;
     min-height: 100dvh;
@@ -201,6 +205,65 @@
     width: 100%
 }
 
+/* homepage */
+
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.homepage-container h3 {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    color: white;
+}
+
+.image-carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#carouselExampleControlsNoTouching {
+    width: clamp(300px, 80%, 1000px);
+    height: auto;
+}
+
+.carousel-item {
+    width: 80%;
+    height: auto;
+}
+
+#carouselExampleControlsNoTouching img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+.welcome {
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 70%;
+    color: white;
+}
+
+.welcome ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.welcome li {
+    font-size: 1.5rem;
+}
+
 /* reviews */
 
 .review-grid {
@@ -217,26 +280,6 @@
     padding: 1rem;
     box-shadow: var(--shadow)
 }
-
-/* Review image carousel */
-
-#carouselExampleControlsNoTouching {
-    width: clamp(300px, 80%, 1000px);
-    height: auto;
-}
-
-.carousel-item {
-    width: 80%;
-    height: auto;
-}
-
-#carouselExampleControlsNoTouching img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 16 / 9 ;
-}
-
 
 /* accessibility */
 
@@ -637,7 +680,6 @@
     border: 1px solid black;
     box-shadow: var(--shadow);
     padding: 1rem;
-
 }
 
 .shop-basket.active {
@@ -675,7 +717,7 @@
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    
+    border-radius: 1rem;
 }
 
 .shop-basket-item-decrement-quantity {
@@ -698,13 +740,9 @@
 }
 
 .blog-header {
-
     padding: 1rem;
     width: clamp(300px, 80%, 1000px);
-
 }
-
-
 
 .blog-post {
     background-color: white;
@@ -734,14 +772,13 @@
 .comments.active-comment {
     display: flex;
 }
+
 .comments {
     display: none;
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
-   
     margin: 0.5rem 0;
-
 }
 
 .comments h3 {
@@ -791,6 +828,7 @@
     padding: 1rem;
     border-radius: 1rem;
 }
+
 .blog-form {
     display: flex;
     flex-direction: column;
@@ -832,7 +870,6 @@
 
 .cafe-page .main {
     display:block;
-
 }
 
 .menu-container{
@@ -840,26 +877,19 @@
     min-width: 300px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    /* grid-template-areas: "cafe-menu cafe-hours"; */
 }
 .cafe-menu{
-    /* grid-area: cafe-menu; */
-    /* width:auto; */
     padding: 1rem;
     background-color: #ccc;
     border-style:solid;
     border-color:#E9724C;
     border-radius: 1rem;
     border-width: 2px;
-
-    
 }
 
 .menu-item{
     padding-bottom: 1rem;
     width: 100%;
-
-
 }
 
 .menu-item h1{
@@ -872,11 +902,6 @@
 
 .menu-price{
     font-size: 18px;
-}
-.cafe-hours{
-    /* grid-area: cafe-hours; */
-
-    
 }
 
 .membership-container {
@@ -961,4 +986,50 @@
     padding: 0.5rem;
     font-size: 1.2rem;
     margin-bottom: 1rem;
+}
+
+.petting-zoo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.petting-zoo-container .carousel{
+    width: 800%;
+    max-width: 1000px;
+    min-width: 300px;
+    height: auto;
+}
+/* Meet Our Furry Friends */
+
+.furryfriends-grid {
+    width: minmax((600px + 4rem), 2600px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 2fr));
+    gap: 4rem;
+}
+
+.furryfriends-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+    gap: 2rem;
+}
+
+.furryfriends-card img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.furryfriends-card h3 {
+    font-size: 2rem;
+}
+
+.furryfriends-card p {
+    font-size: 1.25rem;
 }
