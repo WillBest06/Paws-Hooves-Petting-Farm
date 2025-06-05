@@ -95,8 +95,7 @@ function createNavbar () {
         },
         {
             'name': 'Facilities',
-            'submenu': [{ 'name': 'Petting Zoo', 'hyperlink': 'petting-zoo.html' },
-                        { 'name': 'Cafe', 'hyperlink': 'cafe.html' },
+            'submenu': [{ 'name': 'Cafe', 'hyperlink': 'cafe.html' },
                         { 'name': 'Gift Shop', 'hyperlink': 'shop.html' },
                         { 'name': 'Interactive Map', 'hyperlink': 'map.html' }]
         },
@@ -123,10 +122,10 @@ function createNavbar () {
             'hyperlink': 'reviews.html'
         },
         {
-            'name': 'Support us',
-            'submenu': [{ 'name': 'Donate', 'hyperlink': 'donate.html' },
-                        { 'name': 'Membership', 'hyperlink': 'membership.html' }]
-        }];
+            'name': 'Membership', 
+            'hyperlink': 'membership.html'
+        },    
+        ];
 
     for (let page of pages) {
         if (!('submenu' in page)) {
