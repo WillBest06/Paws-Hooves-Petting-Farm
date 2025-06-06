@@ -675,7 +675,6 @@ p {
     display: none;
     width: 350px;
     height: 100%;
-    background-color: white;
     border-radius: 1rem;
     border: 1px solid black;
     box-shadow: var(--shadow);
@@ -690,6 +689,7 @@ p {
     top: 0px;
     right: 0px;
     overflow-y: scroll;
+    background-color: white;
 }
 
 .shop-basket-item {
