@@ -347,6 +347,8 @@ p {
 
 .map-container {
     width: 100%;
+    max-width:1000px;
+    min-width: 300px;
     height: auto;
     display: flex;
     justify-content: center;
@@ -1032,4 +1034,18 @@ p {
 
 .furryfriends-card p {
     font-size: 1.25rem;
+}
+
+.map-page .main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.map-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
 }

@@ -13,7 +13,7 @@
             rel="stylesheet">
     </head>
     
-    <body>
+    <body class="map-page">
         <div class="site-container">
             <header class="head">
                 
@@ -22,6 +22,11 @@
 
             </nav>
             <main class="main">
+
+                <div class="map-header">
+                    <h1>Interactive Farm Map</h1>
+                    <p>Click on the areas of the map to learn more about each section of the farm.</p>
+                </div>
                 <div class="map-container">
                 <script src ="scripts/imageMapResizer.min.js" defer></script>
                 <img src="images/interactive-map/farm-map.png" alt="Interactive map of the farm" class="map-image" usemap = "#map">
@@ -53,16 +58,20 @@
                             popup.classList.remove("active");
                         }
                         else{
+                            const img = document.querySelector('.map-image');
                             const coords = area.getAttribute("coords").split(",").map(Number);
-                            const x = (coords[0] + coords[2]) / 2;
-                            const y = ((coords[1] + coords[3]) / 2)+100;
-                            console.log(area.alt + " clicked!"); // Debug line
+                            const scaleX = img.width / img.naturalWidth;
+                            const scaleY = (img.height / img.naturalHeight)- 0.4;
+                            // Calculate are to place the popup
+                            const x = ((coords[0] + coords[2]) / 2) * scaleX + img.offsetLeft;
+                            const y = ((coords[1] + coords[3]) / 2) * scaleY + (img.offsetTop);
                             popup.style.top = `${y}px`;
                             popup.style.left = `${x}px`;
-                            popup.textContent = ""; // Clear previous content
+                            popup.innerHTML = ""; // Clear the popup content
                             const title = document.createElement("h3");
                             title.textContent = area.alt;
                             popup.appendChild(title);
+
 
                             const description = document.createElement("p");
                             if (area.alt === "Car Park") {
@@ -90,18 +99,13 @@
                             }
                             popup.appendChild(description);
                             popup.classList.add("active");
-                        }})              
-                    });
-                    popup.addEventListener("click", function () {
-                        popup.classList.remove("active");
-                    });
-
-
-                
-                
-                
-                
-                
+                        }
+                    });              
+                });
+                popup.addEventListener("click", function () {
+                    popup.classList.remove("active");
+                    
+                });
                 </script>
                 </div>
             </main>
