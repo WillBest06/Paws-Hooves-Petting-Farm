@@ -13,7 +13,7 @@
             rel="stylesheet">
     </head>
     
-    <body>
+    <body class="map-page">
         <div class="site-container">
             <header class="head">
                 
@@ -22,6 +22,11 @@
 
             </nav>
             <main class="main">
+
+                <div class="map-header">
+                    <h1>Interactive Farm Map</h1>
+                    <p>Click on the areas of the map to learn more about each section of the farm.</p>
+                </div>
                 <div class="map-container">
                 <script src ="scripts/imageMapResizer.min.js" defer></script>
                 <img src="images/interactive-map/farm-map.png" alt="Interactive map of the farm" class="map-image" usemap = "#map">
@@ -53,9 +58,10 @@
                             popup.classList.remove("active");
                         }
                         else{
+                            const coordMod = map.offsetWidth*0.69;
                             const coords = area.getAttribute("coords").split(",").map(Number);
-                            const x = (coords[0] + coords[2]) / 2;
-                            const y = ((coords[1] + coords[3]) / 2)+100;
+                            const x = (coords[0] + coords[2]) / 2)+ coordMod; ;
+                            const y = ((coords[1] + coords[3]) / 2);
                             console.log(area.alt + " clicked!"); // Debug line
                             popup.style.top = `${y}px`;
                             popup.style.left = `${x}px`;
