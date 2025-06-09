@@ -59,20 +59,19 @@
                         }
                         else{
                             const img = document.querySelector('.map-image');
-                            const rect = img.getBoundingClientRect();
                             const coords = area.getAttribute("coords").split(",").map(Number);
-                            // Calculate scale in case image is resized
                             const scaleX = img.width / img.naturalWidth;
-                            const scaleY = img.height / img.naturalHeight;
+                            const scaleY = (img.height / img.naturalHeight)- 0.4;
+                            // Calculate are to place the popup
                             const x = ((coords[0] + coords[2]) / 2) * scaleX + img.offsetLeft;
-                            const y = ((coords[1] + coords[3]) / 2) * scaleY + (img.offsetTop - 50);
-                            console.log(area.alt + " clicked!"); // Debug line
+                            const y = ((coords[1] + coords[3]) / 2) * scaleY + (img.offsetTop);
                             popup.style.top = `${y}px`;
                             popup.style.left = `${x}px`;
-                            popup.textContent = ""; // Clear previous content
+                            popup.innerHTML = ""; // Clear the popup content
                             const title = document.createElement("h3");
                             title.textContent = area.alt;
                             popup.appendChild(title);
+
 
                             const description = document.createElement("p");
                             if (area.alt === "Car Park") {
@@ -105,6 +104,7 @@
                 });
                 popup.addEventListener("click", function () {
                     popup.classList.remove("active");
+                    
                 });
                 </script>
                 </div>
